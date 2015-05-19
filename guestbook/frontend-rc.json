@@ -2,29 +2,29 @@
   "apiVersion": "v1beta3",
   "kind": "ReplicationController",
   "metadata": {
-    "name": "frontend-v5",
+    "name": "frontend-v16",
     "labels": {
       "name": "frontend",
-      "version": "5"
+      "version": "16"
     }
   },
   "spec": {
     "replicas": 2,
     "selector": {
       "name": "frontend",
-      "version": "5"
+      "version": "16"
     },
     "template": {
       "metadata": {
         "labels": {
           "name": "frontend",
-          "version": "5"
+          "version": "16"
         }
       },
       "spec": {
         "containers": [{
           "name": "php-guestbook",
-          "image": "gcr.io/unified-destiny-94910/php-guestbook:v5",
+          "image": "gcr.io/unified-destiny-94910/php-guestbook:v16",
           "ports": [{
             "containerPort": 80,
             "protocol": "TCP"
