@@ -17,7 +17,24 @@ be created and pushed to Container Registry for use by the demo. So these steps
 will not need to be used for the presentation itself but are needed to make
 changes to the demo.
 
-TODO
+TODO: Add info on syncing code to a GCE VM for development?
+
+Build and tag the docker image.
+
+    $ cd php-guestbook
+    $ docker build -t php-guestbook .
+    $ docker tag php-guestbook gcr.io/<project-id>/php-guestbook:v1
+
+Push the docker container to container registry.
+
+    $ gcloud preview docker push gcr.io/<project-id>/php-guestbook:v1
+
+If you need to change the app, rebuild and tag a new version of the app. Then
+push the new version to Container Registry. After that you can change
+the replication controller to use the new version of the image and do
+a rolling update of the app.
+
+    $ kubectl rollingupdate frontend-v1 -f frontend-rc.json --update-period=1s
 
 ## Running the Demo
 
@@ -79,5 +96,3 @@ Create the memcached service.
 ### Step Three: Start the Web Front End
 
 TODO
-
-
