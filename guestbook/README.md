@@ -17,22 +17,16 @@ be created and pushed to Container Registry for use by the demo. So these steps
 will not need to be used for the presentation itself but are needed to make
 changes to the demo.
 
-TODO: Add info on syncing code to a GCE VM for development?
+Build and tag the docker image. You give the rebuild.sh script a tag
+for a version number (e.g. v1). This script will build tag and
+push the new Docker image.
 
-Build and tag the docker image.
+    $ cd guestbook
+    $ ./rebuild.sh <tag>
 
-    $ cd php-guestbook
-    $ docker build -t php-guestbook .
-    $ docker tag php-guestbook gcr.io/<project-id>/php-guestbook:v1
-
-Push the docker container to container registry.
-
-    $ gcloud preview docker push gcr.io/<project-id>/php-guestbook:v1
-
-If you need to change the app, rebuild and tag a new version of the app. Then
-push the new version to Container Registry. After that you can change
-the replication controller to use the new version of the image and do
-a rolling update of the app.
+If you need to change the app, run rebuild and give it a new tag (e.g. v2).
+After that you can change the replication controller to use the new version of
+the image and do a rolling update of the app.
 
     $ kubectl rollingupdate frontend-v1 -f frontend-rc.json --update-period=1s
 
@@ -95,4 +89,15 @@ Create the memcached service.
 
 ### Step Three: Start the Web Front End
 
-TODO
+Create the guestbook app replication controller:
+
+    $ kubectl create -f frontend-rc.json
+
+Create the guestbook app service:
+
+    $ kubectl create -f frontend-service.json
+
+The service will create a network load balancer on Compute Engine.
+You can view the IP that it's given at Compute -> Network load balancing in the developers console.
+
+TODO: Add instructions on creating a firewall rule.
