@@ -15,25 +15,46 @@ $cache->addServer("memcached", 11211);
 $conn = new PDO("mysql:host=mysql;dbname=guestbook", 'root', 'yourpassword');
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-function newMessage($conn, $message) {
+/**
+ * Saves a new message and updates the cache.
+ */
+function newMessage($conn, $cache, $message) {
+  // This is great PHP
+  if ($message == "0" || $message) {
     $stmt = $conn->prepare("INSERT INTO messages (message) VALUES (:message);");
     $stmt->execute(array(':message' => $message));
-    $cache->set("messages", getMessages());
-}
-
-function getMessages($conn) {
-    $stmt = $conn->query("SELECT message FROM messages ORDER BY id;");
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
-
-if (isset($_GET['cmd']) === true) {
-  header('Content-Type: application/json');
-  if ($_GET['cmd'] == 'set') {
-    newMessage($conn, $_GET['value']);
-    print('{"message": "Updated"}');
-  } else if ($_GET['cmd'] == 'get') {
-    $messages = getMessages($conn);
-    print('{"data": ' . json_encode($messages) . '}');
+    $cache->set("messages", getMessages($conn, null));
   }
+}
+
+/**
+ * Gets all messages from the database. If a cache connection
+ * object is passed then the cache is checked before querying
+ * from the database.
+ */
+function getMessages($conn, $cache) {
+  if ($cache) {
+    $messages = $cache->get("messages");
+  } else {
+    $messages = null;
+  }
+  if (!$messages) {
+    $stmt = $conn->query("SELECT message FROM messages ORDER BY id;");
+    $messages = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    if ($cache) {
+      $cache->set("messages", $messages);
+    }
+  }
+  return $messages;
+}
+
+header('Content-Type: application/json');
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  $message = json_decode(file_get_contents('php://input'), true)['message'];
+  newMessage($conn, $cache, $message);
+  print('{"message": "'.$message.'"}');
+} else {
+  $messages = getMessages($conn, $cache);
+  print('{"data": ' . json_encode($messages) . '}');
 }
 ?>

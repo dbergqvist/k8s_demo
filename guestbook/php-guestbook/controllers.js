@@ -1,29 +1,33 @@
-var redisApp = angular.module('redis', ['ui.bootstrap']);
+var guestbookApp = angular.module('guestbook', ['ui.bootstrap']);
 
 /**
  * Constructor
  */
-function RedisController() {}
+function GuestbookController() {}
 
-RedisController.prototype.onRedis = function() {
+GuestbookController.prototype.newMessage = function() {
     this.scope_.messages.push(this.scope_.msg);
+    var value = this.scope_.msg;
     this.scope_.msg = "";
-    var value = this.scope_.messages.join();
-    this.http_.get("/index.php?cmd=set&key=messages&value=" + value) 
+    this.http_.post("/index.php", {message: value}) 
             .success(angular.bind(this, function(data) {
-                this.scope_.redisResponse = "Updated.";
+                this.scope_.response = "Updated.";
             }));
 };
 
-redisApp.controller('RedisCtrl', function ($scope, $http, $location) {
-        $scope.controller = new RedisController();
-        $scope.controller.scope_ = $scope;
-        $scope.controller.location_ = $location;
-        $scope.controller.http_ = $http;
+guestbookApp.controller('GuestbookCtrl', function ($scope, $http, $location) {
+    $scope.controller = new GuestbookController();
+    $scope.controller.scope_ = $scope;
+    $scope.controller.location_ = $location;
+    $scope.controller.http_ = $http;
 
-        $scope.controller.http_.get("/index.php?cmd=get&key=messages")
-            .success(function(data) {
-                console.log(data);
-                $scope.messages = data.data.split(",");
-            });
+    $scope.controller.http_.get("/index.php")
+        .success(function(data) {
+            console.log(data);
+            var messages = [];
+            for (var i=0; i < data.data.length; i++) {
+                messages.push(data.data[i].message);
+            }
+            $scope.messages = messages;
+        });
 });
