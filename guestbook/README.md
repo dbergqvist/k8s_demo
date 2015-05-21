@@ -101,3 +101,16 @@ The service will create a network load balancer on Compute Engine.
 You can view the IP that it's given at Compute -> Network load balancing in the developers console.
 
 TODO: Add instructions on creating a firewall rule.
+
+### Step Four: Install the MySQL DB schema
+
+Access the setup script at the proper IP address (the one you got from the network load
+balancer in step 3) to create the database schema.
+
+    http://<ip-address/setup.php
+
+### Step Five: Write some guestbook posts!
+
+You should now be able to access the app and write guestbook posts.
+
+    http://<ip-address/index.html
