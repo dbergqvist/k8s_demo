@@ -1,0 +1,23 @@
+apiVersion: v1beta3
+kind: ReplicationController
+metadata:
+  name: frontend-v3
+  labels:
+    name: frontend
+spec:
+  replicas: 3
+  selector:
+    name: frontend
+    version: v3
+  template:
+    metadata:
+      labels:
+        name: frontend
+        version: v3
+    spec:
+      containers:
+      - image: gcr.io/gcpnext2/php-guestbook:v3
+        name: php-guestbook
+        ports:
+        - containerPort: 80
+          protocol: TCP

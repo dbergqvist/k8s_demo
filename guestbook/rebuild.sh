@@ -15,5 +15,5 @@ PROJECT=`gcloud config list | python config.py - core/project`
 cd php-guestbook
 
 docker build -t php-guestbook .
-docker tag php-guestbook gcr.io/$PROJECT/php-guestbook:$TAG
+docker tag -f php-guestbook gcr.io/$PROJECT/php-guestbook:$TAG
 gcloud preview docker push gcr.io/$PROJECT/php-guestbook:$TAG

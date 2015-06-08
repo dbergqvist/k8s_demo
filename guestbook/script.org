@@ -1,0 +1,25 @@
+* gcloud alpha container clusters create gcpnext2 --machine-type n1-standard-2 --num-nodes=3
+* gcloud config set container/cluster gcpnext2
+* kubectl config use-context gke_gcpnext2_us-central1-c_gcpnext2
+* gcloud compute disks create --size=500GB mysql-disk
+* kubectl create -f mysql-server/mysql.yaml
+* kubectl create -f mysql-server/mysql-service.yaml
+* kubectl create -f memcached-server/memcached.yaml
+* kubectl create -f memcached-server/memcached-service.yaml
+* kubectl create -f frontend-rc.json
+* kubectl create -f frontend-service.yaml
+* gcloud compute firewall-rules create nextdemo-node-80 --allow=tcp:80 --target-tags k8s-gcpnext2-node
+
+
+* gcloud alpha container clusters create demo --machine-type n1-standard-2 --num-nodes=3
+* gcloud config set container/cluster demo
+* kubectl config use-context gke_gcpnext2_us-central1-c_demo
+* gcloud compute disks create --size=500GB demo-mysql-disk
+* kubectl create -f mysql-server/mysql.yaml
+* kubectl create -f mysql-server/mysql-service.yaml
+* kubectl create -f memcached-server/memcached.yaml
+* kubectl create -f memcached-server/memcached-service.yaml
+* kubectl create -f frontend-rc.yaml
+* kubectl create -f frontend-service.yaml
+* Go to https://console.developers.google.com/project/gcpnext2/compute/loadBalancing/basicSetup
+* gcloud compute firewall-rules create nextdemo-node-80 --allow=tcp:80 --target-tags k8s-demo-node

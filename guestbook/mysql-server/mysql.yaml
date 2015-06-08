@@ -27,5 +27,5 @@ spec:
     - name: mysql-persistent-storage
       gcePersistentDisk:
         # This GCE PD must already exist.
-        pdName: mysql-disk
+        pdName: demo-mysql-disk
         fsType: ext4
