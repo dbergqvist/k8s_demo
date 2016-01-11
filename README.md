@@ -12,6 +12,9 @@ Note: These instructions assume you have a Google Cloud Platform project with bi
 
 ## Run the demo
 * Update gcloud
+```bash
+gcloud components update
+```
 * Create a cluster
 * Create a 500MB blank PD called 'demo-mysql-disk' in the same zone as the cluster
 * Pull down the credentials locally with gcloud container clusters get-credentials <cluster>
