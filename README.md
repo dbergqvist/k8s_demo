@@ -2,7 +2,7 @@
 Simple Kubernetes demo
 
 ## Configure your Google Cloud Platform project
-Note: These instructions assume you have a Google Cloud Platform project with billing enabled.
+Note: These instructions assume you have a Google Cloud Platform project with billing enabled and [Google Cloud SDK](https://cloud.google.com/sdk/) installed
 * Point your browser at your [Google Developers Console](https://console.developers.google.com/).
 * Navigate to: Projects->{your-project-name}->APIs & auth->APIs.
 * Ensure the following APIs are enabled:
