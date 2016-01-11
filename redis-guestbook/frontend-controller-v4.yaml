@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: frontend-v4
+  labels:
+    name: frontend
+spec:
+  replicas: 3
+  selector:
+    name: frontend
+    version: v4
+  template:
+    metadata:
+      labels:
+        name: frontend
+        version: v4
+    spec:
+      containers:
+      - name: php-redis
+        resources:
+          limits:
+            memory: 128Mi
+            cpu: 500m
+        image: gcr.io/kubernetes-demo-goto/php-redis:v3
+        ports:
+        - containerPort: 80

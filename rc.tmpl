@@ -1,0 +1,3 @@
+{{printf "%-43s" "CONTROLLER"}} {{printf "%-10s" "REPLICAS"}} {{printf "%-18s" "IMAGE"}}
+{{range .items}}{{printf "%-43s" .metadata.name}} {{printf "%-10.0f" .spec.replicas}} {{range .spec.template.spec.containers}}{{ .image}} {{end}} 
+{{end}}

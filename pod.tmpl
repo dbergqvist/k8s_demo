@@ -1,0 +1,3 @@
+{{printf "%-37.35s" "POD NAME"}} {{printf "%-35s" "HOST"}} {{"STATUS"}}
+{{range .items}}{{printf "%-37.35s" .metadata.name}} {{printf "%-35s" .spec.host}} {{.status.phase}} 
+{{end}}

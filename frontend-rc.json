@@ -2,26 +2,35 @@
   "apiVersion": "v1beta3",
   "kind": "ReplicationController",
   "metadata": {
-    "name": "frontend-v3",
+    "name": "frontend",
     "labels": {
-      "name": "frontend"
+      "name": "frontend",
+      "visualize": "true",
+      "app": "nextdemo"
     }
   },
   "spec": {
     "replicas": 3,
     "selector": {
+<<<<<<< Updated upstream
       "name": "frontend"
+=======
+      "name": "frontend",
+      "version": "1"
+>>>>>>> Stashed changes
     },
     "template": {
       "metadata": {
         "labels": {
-          "name": "frontend"
+          "name": "frontend",
+          "visualize": "true",
+          "app": "nextdemo"
         }
       },
       "spec": {
         "containers": [{
           "name": "php-guestbook",
-          "image": "gcr.io/gcpnext2/php-guestbook:v3",
+          "image": "gcr.io/nextdemo42/php-guestbook:v1",
           "ports": [{
             "containerPort": 80,
             "protocol": "TCP"

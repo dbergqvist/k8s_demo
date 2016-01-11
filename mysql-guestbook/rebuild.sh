@@ -16,4 +16,4 @@ cd php-guestbook
 
 docker build -t php-guestbook .
 docker tag -f php-guestbook gcr.io/$PROJECT/php-guestbook:$TAG
-gcloud preview docker push gcr.io/$PROJECT/php-guestbook:$TAG
+gcloud docker push gcr.io/$PROJECT/php-guestbook:$TAG

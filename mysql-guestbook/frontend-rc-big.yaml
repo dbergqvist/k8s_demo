@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: frontend-rc-big
+  labels:
+    name: "frontend"
+    visualize: "true"
+    version: "big"
+    app: "nextdemo"
+spec:
+  replicas: 2
+  selector:
+    name: frontend
+    version: "big"
+    app: nextdemo
+  template:
+    metadata:
+      labels:
+        name: frontend
+        visualize: "true"
+        version: "big"
+        app: nextdemo
+        uses: memcached_mysql
+    spec:
+      containers:
+      - image: gcr.io/rabbit-skateboard-345/php-guestbook:containercamp
+        imagePullPolicy: Always
+        name: php-guestbook
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: 1
+        ports:
+        - containerPort: 80
+          protocol: TCP

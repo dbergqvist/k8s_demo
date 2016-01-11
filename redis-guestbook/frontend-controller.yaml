@@ -1,23 +1,22 @@
-apiVersion: v1beta3
+apiVersion: v1
 kind: ReplicationController
 metadata:
-  name: frontend-v3
+  name: frontend-v2
   labels:
     name: frontend
 spec:
   replicas: 3
   selector:
     name: frontend
-    version: v3
+    version: v2
   template:
     metadata:
       labels:
         name: frontend
-        version: v3
+        version: v2
     spec:
       containers:
-      - image: gcr.io/gcpnext2/php-guestbook:v3
-        name: php-guestbook
+      - name: php-redis
+        image: kubernetes/example-guestbook-php-redis:v2
         ports:
         - containerPort: 80
-          protocol: TCP

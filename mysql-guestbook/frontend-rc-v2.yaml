@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: frontend-rc-v2
+  labels:
+    name: "frontend"
+    visualize: "true"
+    version: "1.0"
+    app: "nextdemo"
+spec:
+  replicas: 3
+  selector:
+    name: frontend
+    version: "2.0"
+    app: nextdemo
+  template:
+    metadata:
+      labels:
+        name: frontend
+        visualize: "true"
+        version: "2.0"
+        app: nextdemo
+        uses: memcached_mysql
+    spec:
+      containers:
+      - image: gcr.io/klarna-techtalk-k8s/php-guestbook:v2
+        imagePullPolicy: Always
+        name: php-guestbook
+        ports:
+        - containerPort: 80
+          protocol: TCP

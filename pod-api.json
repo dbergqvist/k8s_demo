@@ -1,0 +1,1084 @@
+{
+  "kind": "PodList",
+  "apiVersion": "v1",
+  "metadata": {
+    "selfLink": "/api/v1/pods",
+    "resourceVersion": "45726"
+  },
+  "items": [
+    {
+      "metadata": {
+        "name": "frontend-rc-v2-qc8mm",
+        "generateName": "frontend-rc-v2-",
+        "namespace": "default",
+        "selfLink": "/api/v1/namespaces/default/pods/frontend-rc-v2-qc8mm",
+        "uid": "3d1979ca-3602-11e5-9d90-42010af0c943",
+        "resourceVersion": "21085",
+        "creationTimestamp": "2015-07-29T14:58:14Z",
+        "labels": {
+          "app": "nextdemo",
+          "name": "frontend",
+          "uses": "memcached_mysql",
+          "version": "2.0",
+          "visualize": "true"
+        },
+        "annotations": {
+          "kubernetes.io/created-by": "{\"kind\":\"SerializedReference\",\"apiVersion\":\"v1\",\"reference\":{\"kind\":\"ReplicationController\",\"namespace\":\"default\",\"name\":\"frontend-rc-v2\",\"uid\":\"32d4519d-3602-11e5-9d90-42010af0c943\",\"apiVersion\":\"v1\",\"resourceVersion\":\"21059\"}}"
+        }
+      },
+      "spec": {
+        "volumes": [
+          {
+            "name": "default-token-yln4e",
+            "secret": {
+              "secretName": "default-token-yln4e"
+            }
+          }
+        ],
+        "containers": [
+          {
+            "name": "php-guestbook",
+            "image": "gcr.io/rabbit-skateboard-345/php-guestbook:esyn-web",
+            "ports": [
+              {
+                "containerPort": 80,
+                "protocol": "TCP"
+              }
+            ],
+            "resources": {
+              "limits": {
+                "cpu": "100m"
+              }
+            },
+            "volumeMounts": [
+              {
+                "name": "default-token-yln4e",
+                "readOnly": true,
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount"
+              }
+            ],
+            "terminationMessagePath": "/dev/termination-log",
+            "imagePullPolicy": "Always"
+          }
+        ],
+        "restartPolicy": "Always",
+        "dnsPolicy": "ClusterFirst",
+        "serviceAccountName": "default",
+        "serviceAccount": "default",
+        "nodeName": "gke-webinar-79a3bdb2-node-q6w6"
+      },
+      "status": {
+        "phase": "Running",
+        "conditions": [
+          {
+            "type": "Ready",
+            "status": "True"
+          }
+        ],
+        "hostIP": "10.240.14.3",
+        "podIP": "10.0.1.14",
+        "startTime": "2015-07-29T14:58:14Z",
+        "containerStatuses": [
+          {
+            "name": "php-guestbook",
+            "state": {
+              "running": {
+                "startedAt": "2015-07-29T14:58:15Z"
+              }
+            },
+            "lastState": {},
+            "ready": true,
+            "restartCount": 0,
+            "image": "gcr.io/rabbit-skateboard-345/php-guestbook:esyn-web",
+            "imageID": "docker://a7c6ced1197dad2e86807c20c563ddf0b0a2fc63ae3869f00e74d976d281d1db",
+            "containerID": "docker://f9ead8cb3498141204b5a6fe02137ef8252d4881a645ec5ab041c35896c56bfe"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "name": "frontend-rc-v2-yrgte",
+        "generateName": "frontend-rc-v2-",
+        "namespace": "default",
+        "selfLink": "/api/v1/namespaces/default/pods/frontend-rc-v2-yrgte",
+        "uid": "34c425a0-3602-11e5-9d90-42010af0c943",
+        "resourceVersion": "21056",
+        "creationTimestamp": "2015-07-29T14:58:00Z",
+        "labels": {
+          "app": "nextdemo",
+          "name": "frontend",
+          "uses": "memcached_mysql",
+          "version": "2.0",
+          "visualize": "true"
+        },
+        "annotations": {
+          "kubernetes.io/created-by": "{\"kind\":\"SerializedReference\",\"apiVersion\":\"v1\",\"reference\":{\"kind\":\"ReplicationController\",\"namespace\":\"default\",\"name\":\"frontend-rc-v2\",\"uid\":\"32d4519d-3602-11e5-9d90-42010af0c943\",\"apiVersion\":\"v1\",\"resourceVersion\":\"21031\"}}"
+        }
+      },
+      "spec": {
+        "volumes": [
+          {
+            "name": "default-token-yln4e",
+            "secret": {
+              "secretName": "default-token-yln4e"
+            }
+          }
+        ],
+        "containers": [
+          {
+            "name": "php-guestbook",
+            "image": "gcr.io/rabbit-skateboard-345/php-guestbook:esyn-web",
+            "ports": [
+              {
+                "containerPort": 80,
+                "protocol": "TCP"
+              }
+            ],
+            "resources": {
+              "limits": {
+                "cpu": "100m"
+              }
+            },
+            "volumeMounts": [
+              {
+                "name": "default-token-yln4e",
+                "readOnly": true,
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount"
+              }
+            ],
+            "terminationMessagePath": "/dev/termination-log",
+            "imagePullPolicy": "Always"
+          }
+        ],
+        "restartPolicy": "Always",
+        "dnsPolicy": "ClusterFirst",
+        "serviceAccountName": "default",
+        "serviceAccount": "default",
+        "nodeName": "gke-webinar-79a3bdb2-node-w05p"
+      },
+      "status": {
+        "phase": "Running",
+        "conditions": [
+          {
+            "type": "Ready",
+            "status": "True"
+          }
+        ],
+        "hostIP": "10.240.33.206",
+        "podIP": "10.0.2.14",
+        "startTime": "2015-07-29T14:58:00Z",
+        "containerStatuses": [
+          {
+            "name": "php-guestbook",
+            "state": {
+              "running": {
+                "startedAt": "2015-07-29T14:58:01Z"
+              }
+            },
+            "lastState": {},
+            "ready": true,
+            "restartCount": 0,
+            "image": "gcr.io/rabbit-skateboard-345/php-guestbook:esyn-web",
+            "imageID": "docker://a7c6ced1197dad2e86807c20c563ddf0b0a2fc63ae3869f00e74d976d281d1db",
+            "containerID": "docker://ffa764e14eb664cf151b6f562bdf2caf2ce8faa65e303802ddaa98e731ebca8b"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "name": "memcached",
+        "namespace": "default",
+        "selfLink": "/api/v1/namespaces/default/pods/memcached",
+        "uid": "139eb624-35d6-11e5-9d90-42010af0c943",
+        "resourceVersion": "14053",
+        "creationTimestamp": "2015-07-29T09:42:07Z",
+        "labels": {
+          "app": "nextdemo",
+          "name": "memcached",
+          "visualize": "true"
+        }
+      },
+      "spec": {
+        "volumes": [
+          {
+            "name": "default-token-yln4e",
+            "secret": {
+              "secretName": "default-token-yln4e"
+            }
+          }
+        ],
+        "containers": [
+          {
+            "name": "memcached",
+            "image": "memcached:1.4",
+            "ports": [
+              {
+                "name": "memcached",
+                "containerPort": 11211,
+                "protocol": "TCP"
+              }
+            ],
+            "resources": {
+              "limits": {
+                "cpu": "100m"
+              }
+            },
+            "volumeMounts": [
+              {
+                "name": "default-token-yln4e",
+                "readOnly": true,
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount"
+              }
+            ],
+            "terminationMessagePath": "/dev/termination-log",
+            "imagePullPolicy": "IfNotPresent"
+          }
+        ],
+        "restartPolicy": "Always",
+        "dnsPolicy": "ClusterFirst",
+        "serviceAccountName": "default",
+        "serviceAccount": "default",
+        "nodeName": "gke-webinar-79a3bdb2-node-3ger"
+      },
+      "status": {
+        "phase": "Running",
+        "conditions": [
+          {
+            "type": "Ready",
+            "status": "True"
+          }
+        ],
+        "hostIP": "10.240.89.175",
+        "podIP": "10.0.0.7",
+        "startTime": "2015-07-29T09:42:07Z",
+        "containerStatuses": [
+          {
+            "name": "memcached",
+            "state": {
+              "running": {
+                "startedAt": "2015-07-29T09:42:07Z"
+              }
+            },
+            "lastState": {},
+            "ready": true,
+            "restartCount": 0,
+            "image": "memcached:1.4",
+            "imageID": "docker://e06a1cdf7e49ad94f24eb947a6432c78b1e66e667a634a5c1170cd289f0f2fbe",
+            "containerID": "docker://d3997bc41baca28e51e8559a9063f820fa5e190dce1ec89aad567ff1bbca3016"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "name": "mysql",
+        "namespace": "default",
+        "selfLink": "/api/v1/namespaces/default/pods/mysql",
+        "uid": "f8cfa1fa-35d5-11e5-9d90-42010af0c943",
+        "resourceVersion": "14024",
+        "creationTimestamp": "2015-07-29T09:41:22Z",
+        "labels": {
+          "app": "nextdemo",
+          "name": "mysql",
+          "visualize": "true"
+        }
+      },
+      "spec": {
+        "volumes": [
+          {
+            "name": "mysql-persistent-storage",
+            "gcePersistentDisk": {
+              "pdName": "demo-mysql-disk",
+              "fsType": "ext4"
+            }
+          },
+          {
+            "name": "default-token-yln4e",
+            "secret": {
+              "secretName": "default-token-yln4e"
+            }
+          }
+        ],
+        "containers": [
+          {
+            "name": "mysql",
+            "image": "mysql",
+            "ports": [
+              {
+                "name": "mysql",
+                "containerPort": 3306,
+                "protocol": "TCP"
+              }
+            ],
+            "env": [
+              {
+                "name": "MYSQL_ROOT_PASSWORD",
+                "value": "yourpassword"
+              }
+            ],
+            "resources": {
+              "limits": {
+                "cpu": "1"
+              }
+            },
+            "volumeMounts": [
+              {
+                "name": "mysql-persistent-storage",
+                "mountPath": "/var/lib/mysql"
+              },
+              {
+                "name": "default-token-yln4e",
+                "readOnly": true,
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount"
+              }
+            ],
+            "terminationMessagePath": "/dev/termination-log",
+            "imagePullPolicy": "IfNotPresent"
+          }
+        ],
+        "restartPolicy": "Always",
+        "dnsPolicy": "ClusterFirst",
+        "serviceAccountName": "default",
+        "serviceAccount": "default",
+        "nodeName": "gke-webinar-79a3bdb2-node-w05p"
+      },
+      "status": {
+        "phase": "Running",
+        "conditions": [
+          {
+            "type": "Ready",
+            "status": "True"
+          }
+        ],
+        "hostIP": "10.240.33.206",
+        "podIP": "10.0.2.8",
+        "startTime": "2015-07-29T09:41:22Z",
+        "containerStatuses": [
+          {
+            "name": "mysql",
+            "state": {
+              "running": {
+                "startedAt": "2015-07-29T09:41:26Z"
+              }
+            },
+            "lastState": {},
+            "ready": true,
+            "restartCount": 0,
+            "image": "mysql",
+            "imageID": "docker://a128139aadf282a10ec937a60010f837fa1b91dd367e05c7ca6197a84b3115b3",
+            "containerID": "docker://a53685fa4764598ad99bb2a65a2069d7e314ed5e60ec4734f64246295d2951c6"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "name": "fluentd-cloud-logging-gke-webinar-79a3bdb2-node-3ger",
+        "namespace": "kube-system",
+        "selfLink": "/api/v1/namespaces/kube-system/pods/fluentd-cloud-logging-gke-webinar-79a3bdb2-node-3ger",
+        "uid": "d0f26eef-3577-11e5-9d90-42010af0c943",
+        "resourceVersion": "121",
+        "creationTimestamp": "2015-07-28T22:27:22Z",
+        "annotations": {
+          "kubernetes.io/config.mirror": "mirror",
+          "kubernetes.io/config.seen": "2015-07-28T22:26:39.193256167Z",
+          "kubernetes.io/config.source": "file"
+        }
+      },
+      "spec": {
+        "volumes": [
+          {
+            "name": "varlog",
+            "hostPath": {
+              "path": "/var/log"
+            }
+          },
+          {
+            "name": "containers",
+            "hostPath": {
+              "path": "/var/lib/docker/containers"
+            }
+          }
+        ],
+        "containers": [
+          {
+            "name": "fluentd-cloud-logging",
+            "image": "gcr.io/google_containers/fluentd-gcp:1.8",
+            "env": [
+              {
+                "name": "FLUENTD_ARGS",
+                "value": "-qq"
+              }
+            ],
+            "resources": {
+              "limits": {
+                "cpu": "100m",
+                "memory": "200Mi"
+              }
+            },
+            "volumeMounts": [
+              {
+                "name": "varlog",
+                "mountPath": "/varlog"
+              },
+              {
+                "name": "containers",
+                "mountPath": "/var/lib/docker/containers"
+              }
+            ],
+            "terminationMessagePath": "/dev/termination-log",
+            "imagePullPolicy": "IfNotPresent"
+          }
+        ],
+        "restartPolicy": "Always",
+        "dnsPolicy": "ClusterFirst",
+        "nodeName": "gke-webinar-79a3bdb2-node-3ger"
+      },
+      "status": {
+        "phase": "Running",
+        "conditions": [
+          {
+            "type": "Ready",
+            "status": "True"
+          }
+        ],
+        "hostIP": "10.240.89.175",
+        "podIP": "10.0.0.2",
+        "startTime": "2015-07-28T22:27:22Z",
+        "containerStatuses": [
+          {
+            "name": "fluentd-cloud-logging",
+            "state": {
+              "running": {
+                "startedAt": "2015-07-28T22:27:22Z"
+              }
+            },
+            "lastState": {},
+            "ready": true,
+            "restartCount": 0,
+            "image": "gcr.io/google_containers/fluentd-gcp:1.8",
+            "imageID": "docker://9855059e588fee45695a2cb5f2e57d2a0ded43cb3e3ae6567623b77f485dd2d0",
+            "containerID": "docker://b9d7fade6b90e9ae339a825e1f33dbe735a20d8ac6a5496818813d548af8220c"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "name": "fluentd-cloud-logging-gke-webinar-79a3bdb2-node-q6w6",
+        "namespace": "kube-system",
+        "selfLink": "/api/v1/namespaces/kube-system/pods/fluentd-cloud-logging-gke-webinar-79a3bdb2-node-q6w6",
+        "uid": "d1734a21-3577-11e5-9d90-42010af0c943",
+        "resourceVersion": "149",
+        "creationTimestamp": "2015-07-28T22:27:23Z",
+        "annotations": {
+          "kubernetes.io/config.mirror": "mirror",
+          "kubernetes.io/config.seen": "2015-07-28T22:26:39.906287811Z",
+          "kubernetes.io/config.source": "file"
+        }
+      },
+      "spec": {
+        "volumes": [
+          {
+            "name": "varlog",
+            "hostPath": {
+              "path": "/var/log"
+            }
+          },
+          {
+            "name": "containers",
+            "hostPath": {
+              "path": "/var/lib/docker/containers"
+            }
+          }
+        ],
+        "containers": [
+          {
+            "name": "fluentd-cloud-logging",
+            "image": "gcr.io/google_containers/fluentd-gcp:1.8",
+            "env": [
+              {
+                "name": "FLUENTD_ARGS",
+                "value": "-qq"
+              }
+            ],
+            "resources": {
+              "limits": {
+                "cpu": "100m",
+                "memory": "200Mi"
+              }
+            },
+            "volumeMounts": [
+              {
+                "name": "varlog",
+                "mountPath": "/varlog"
+              },
+              {
+                "name": "containers",
+                "mountPath": "/var/lib/docker/containers"
+              }
+            ],
+            "terminationMessagePath": "/dev/termination-log",
+            "imagePullPolicy": "IfNotPresent"
+          }
+        ],
+        "restartPolicy": "Always",
+        "dnsPolicy": "ClusterFirst",
+        "nodeName": "gke-webinar-79a3bdb2-node-q6w6"
+      },
+      "status": {
+        "phase": "Running",
+        "conditions": [
+          {
+            "type": "Ready",
+            "status": "True"
+          }
+        ],
+        "hostIP": "10.240.14.3",
+        "podIP": "10.0.1.2",
+        "startTime": "2015-07-28T22:27:23Z",
+        "containerStatuses": [
+          {
+            "name": "fluentd-cloud-logging",
+            "state": {
+              "running": {
+                "startedAt": "2015-07-28T22:27:23Z"
+              }
+            },
+            "lastState": {},
+            "ready": true,
+            "restartCount": 0,
+            "image": "gcr.io/google_containers/fluentd-gcp:1.8",
+            "imageID": "docker://9855059e588fee45695a2cb5f2e57d2a0ded43cb3e3ae6567623b77f485dd2d0",
+            "containerID": "docker://d8be08ed7b2ca2ea47f9ab4a03b9ffd960c851cd5c97fa6b71e3cc311a46616a"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "name": "fluentd-cloud-logging-gke-webinar-79a3bdb2-node-w05p",
+        "namespace": "kube-system",
+        "selfLink": "/api/v1/namespaces/kube-system/pods/fluentd-cloud-logging-gke-webinar-79a3bdb2-node-w05p",
+        "uid": "d142694e-3577-11e5-9d90-42010af0c943",
+        "resourceVersion": "144",
+        "creationTimestamp": "2015-07-28T22:27:23Z",
+        "annotations": {
+          "kubernetes.io/config.mirror": "mirror",
+          "kubernetes.io/config.seen": "2015-07-28T22:26:39.912813403Z",
+          "kubernetes.io/config.source": "file"
+        }
+      },
+      "spec": {
+        "volumes": [
+          {
+            "name": "varlog",
+            "hostPath": {
+              "path": "/var/log"
+            }
+          },
+          {
+            "name": "containers",
+            "hostPath": {
+              "path": "/var/lib/docker/containers"
+            }
+          }
+        ],
+        "containers": [
+          {
+            "name": "fluentd-cloud-logging",
+            "image": "gcr.io/google_containers/fluentd-gcp:1.8",
+            "env": [
+              {
+                "name": "FLUENTD_ARGS",
+                "value": "-qq"
+              }
+            ],
+            "resources": {
+              "limits": {
+                "cpu": "100m",
+                "memory": "200Mi"
+              }
+            },
+            "volumeMounts": [
+              {
+                "name": "varlog",
+                "mountPath": "/varlog"
+              },
+              {
+                "name": "containers",
+                "mountPath": "/var/lib/docker/containers"
+              }
+            ],
+            "terminationMessagePath": "/dev/termination-log",
+            "imagePullPolicy": "IfNotPresent"
+          }
+        ],
+        "restartPolicy": "Always",
+        "dnsPolicy": "ClusterFirst",
+        "nodeName": "gke-webinar-79a3bdb2-node-w05p"
+      },
+      "status": {
+        "phase": "Running",
+        "conditions": [
+          {
+            "type": "Ready",
+            "status": "True"
+          }
+        ],
+        "hostIP": "10.240.33.206",
+        "podIP": "10.0.2.2",
+        "startTime": "2015-07-28T22:27:23Z",
+        "containerStatuses": [
+          {
+            "name": "fluentd-cloud-logging",
+            "state": {
+              "running": {
+                "startedAt": "2015-07-28T22:27:23Z"
+              }
+            },
+            "lastState": {},
+            "ready": true,
+            "restartCount": 0,
+            "image": "gcr.io/google_containers/fluentd-gcp:1.8",
+            "imageID": "docker://9855059e588fee45695a2cb5f2e57d2a0ded43cb3e3ae6567623b77f485dd2d0",
+            "containerID": "docker://33ad7d8aa651e5da49921e929f47140cf1a89bd6f721fdca50e82e8dd449a503"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "name": "kube-dns-v8-vc9qi",
+        "generateName": "kube-dns-v8-",
+        "namespace": "kube-system",
+        "selfLink": "/api/v1/namespaces/kube-system/pods/kube-dns-v8-vc9qi",
+        "uid": "be7175d0-3577-11e5-9d90-42010af0c943",
+        "resourceVersion": "198",
+        "creationTimestamp": "2015-07-28T22:26:51Z",
+        "labels": {
+          "k8s-app": "kube-dns",
+          "kubernetes.io/cluster-service": "true",
+          "version": "v8"
+        },
+        "annotations": {
+          "kubernetes.io/created-by": "{\"kind\":\"SerializedReference\",\"apiVersion\":\"v1\",\"reference\":{\"kind\":\"ReplicationController\",\"namespace\":\"kube-system\",\"name\":\"kube-dns-v8\",\"uid\":\"be6e5dd8-3577-11e5-9d90-42010af0c943\",\"apiVersion\":\"v1\",\"resourceVersion\":\"48\"}}"
+        }
+      },
+      "spec": {
+        "volumes": [
+          {
+            "name": "etcd-storage",
+            "emptyDir": {}
+          },
+          {
+            "name": "default-token-095sw",
+            "secret": {
+              "secretName": "default-token-095sw"
+            }
+          }
+        ],
+        "containers": [
+          {
+            "name": "etcd",
+            "image": "gcr.io/google_containers/etcd:2.0.9",
+            "command": [
+              "/usr/local/bin/etcd",
+              "-data-dir",
+              "/var/etcd/data",
+              "-listen-client-urls",
+              "http://127.0.0.1:2379,http://127.0.0.1:4001",
+              "-advertise-client-urls",
+              "http://127.0.0.1:2379,http://127.0.0.1:4001",
+              "-initial-cluster-token",
+              "skydns-etcd"
+            ],
+            "resources": {
+              "limits": {
+                "cpu": "100m",
+                "memory": "50Mi"
+              }
+            },
+            "volumeMounts": [
+              {
+                "name": "etcd-storage",
+                "mountPath": "/var/etcd/data"
+              },
+              {
+                "name": "default-token-095sw",
+                "readOnly": true,
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount"
+              }
+            ],
+            "terminationMessagePath": "/dev/termination-log",
+            "imagePullPolicy": "IfNotPresent"
+          },
+          {
+            "name": "kube2sky",
+            "image": "gcr.io/google_containers/kube2sky:1.11",
+            "args": [
+              "-domain=cluster.local"
+            ],
+            "resources": {
+              "limits": {
+                "cpu": "100m",
+                "memory": "50Mi"
+              }
+            },
+            "volumeMounts": [
+              {
+                "name": "default-token-095sw",
+                "readOnly": true,
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount"
+              }
+            ],
+            "terminationMessagePath": "/dev/termination-log",
+            "imagePullPolicy": "IfNotPresent"
+          },
+          {
+            "name": "skydns",
+            "image": "gcr.io/google_containers/skydns:2015-03-11-001",
+            "args": [
+              "-machines=http://localhost:4001",
+              "-addr=0.0.0.0:53",
+              "-domain=cluster.local."
+            ],
+            "ports": [
+              {
+                "name": "dns",
+                "containerPort": 53,
+                "protocol": "UDP"
+              },
+              {
+                "name": "dns-tcp",
+                "containerPort": 53,
+                "protocol": "TCP"
+              }
+            ],
+            "resources": {
+              "limits": {
+                "cpu": "100m",
+                "memory": "50Mi"
+              }
+            },
+            "volumeMounts": [
+              {
+                "name": "default-token-095sw",
+                "readOnly": true,
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount"
+              }
+            ],
+            "livenessProbe": {
+              "httpGet": {
+                "path": "/healthz",
+                "port": 8080,
+                "scheme": "HTTP"
+              },
+              "initialDelaySeconds": 30,
+              "timeoutSeconds": 5
+            },
+            "terminationMessagePath": "/dev/termination-log",
+            "imagePullPolicy": "IfNotPresent"
+          },
+          {
+            "name": "healthz",
+            "image": "gcr.io/google_containers/exechealthz:1.0",
+            "args": [
+              "-cmd=nslookup kubernetes.default.svc.cluster.local localhost \u003e/dev/null",
+              "-port=8080"
+            ],
+            "ports": [
+              {
+                "containerPort": 8080,
+                "protocol": "TCP"
+              }
+            ],
+            "resources": {
+              "limits": {
+                "cpu": "10m",
+                "memory": "20Mi"
+              }
+            },
+            "volumeMounts": [
+              {
+                "name": "default-token-095sw",
+                "readOnly": true,
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount"
+              }
+            ],
+            "terminationMessagePath": "/dev/termination-log",
+            "imagePullPolicy": "IfNotPresent"
+          }
+        ],
+        "restartPolicy": "Always",
+        "dnsPolicy": "Default",
+        "serviceAccountName": "default",
+        "serviceAccount": "default",
+        "nodeName": "gke-webinar-79a3bdb2-node-q6w6"
+      },
+      "status": {
+        "phase": "Running",
+        "conditions": [
+          {
+            "type": "Ready",
+            "status": "True"
+          }
+        ],
+        "hostIP": "10.240.14.3",
+        "podIP": "10.0.1.3",
+        "startTime": "2015-07-28T22:27:23Z",
+        "containerStatuses": [
+          {
+            "name": "etcd",
+            "state": {
+              "running": {
+                "startedAt": "2015-07-28T22:27:24Z"
+              }
+            },
+            "lastState": {},
+            "ready": true,
+            "restartCount": 0,
+            "image": "gcr.io/google_containers/etcd:2.0.9",
+            "imageID": "docker://b6b9a86dc06aa1361357ca1b105feba961f6a4145adca6c54e142c0be0fe87b0",
+            "containerID": "docker://ef1ea1e3901b8f2a19c592b02ca89e628913ed252e2d16579289b043373fac2b"
+          },
+          {
+            "name": "healthz",
+            "state": {
+              "running": {
+                "startedAt": "2015-07-28T22:27:30Z"
+              }
+            },
+            "lastState": {},
+            "ready": true,
+            "restartCount": 0,
+            "image": "gcr.io/google_containers/exechealthz:1.0",
+            "imageID": "docker://4f3d04b1d47b64834d494f9416d1f17a5f93a3e2035ad604fee47cfbba62be60",
+            "containerID": "docker://5785e0824288571782bcdc85e757373aa07290f5d4d371ad1dc6a43052087dfb"
+          },
+          {
+            "name": "kube2sky",
+            "state": {
+              "running": {
+                "startedAt": "2015-07-28T22:27:26Z"
+              }
+            },
+            "lastState": {},
+            "ready": true,
+            "restartCount": 0,
+            "image": "gcr.io/google_containers/kube2sky:1.11",
+            "imageID": "docker://e52a547dca17cd83e8b6022e8ae1c1883d0855bce2d1c30071ffa0dcb8a8caf6",
+            "containerID": "docker://c774057f02de4e226eb6004732146375a7de6ec2a8f1a2aa79de49e0392013a3"
+          },
+          {
+            "name": "skydns",
+            "state": {
+              "running": {
+                "startedAt": "2015-07-28T22:28:03Z"
+              }
+            },
+            "lastState": {
+              "terminated": {
+                "exitCode": 2,
+                "startedAt": "2015-07-28T22:27:28Z",
+                "finishedAt": "2015-07-28T22:28:03Z",
+                "containerID": "docker://1dfd71bba3df16665b34757e4efd4adb0158d9a43461b661ce5d793f0223a234"
+              }
+            },
+            "ready": true,
+            "restartCount": 1,
+            "image": "gcr.io/google_containers/skydns:2015-03-11-001",
+            "imageID": "docker://791ddf327076e0fd35a1125568a56c05ee1f1dfd7a165c74f4d489d8a5e65ac5",
+            "containerID": "docker://c10a078a74940c27e28d4dfd466ce9686d3ce7b19825b0c4ca574b7957e25147"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "name": "kube-ui-v1-wg26j",
+        "generateName": "kube-ui-v1-",
+        "namespace": "kube-system",
+        "selfLink": "/api/v1/namespaces/kube-system/pods/kube-ui-v1-wg26j",
+        "uid": "be73da5a-3577-11e5-9d90-42010af0c943",
+        "resourceVersion": "157",
+        "creationTimestamp": "2015-07-28T22:26:51Z",
+        "labels": {
+          "k8s-app": "kube-ui",
+          "kubernetes.io/cluster-service": "true",
+          "version": "v1"
+        },
+        "annotations": {
+          "kubernetes.io/created-by": "{\"kind\":\"SerializedReference\",\"apiVersion\":\"v1\",\"reference\":{\"kind\":\"ReplicationController\",\"namespace\":\"kube-system\",\"name\":\"kube-ui-v1\",\"uid\":\"be7058f9-3577-11e5-9d90-42010af0c943\",\"apiVersion\":\"v1\",\"resourceVersion\":\"50\"}}"
+        }
+      },
+      "spec": {
+        "volumes": [
+          {
+            "name": "default-token-095sw",
+            "secret": {
+              "secretName": "default-token-095sw"
+            }
+          }
+        ],
+        "containers": [
+          {
+            "name": "kube-ui",
+            "image": "gcr.io/google_containers/kube-ui:v1.1",
+            "ports": [
+              {
+                "containerPort": 8080,
+                "protocol": "TCP"
+              }
+            ],
+            "resources": {
+              "limits": {
+                "cpu": "100m",
+                "memory": "50Mi"
+              }
+            },
+            "volumeMounts": [
+              {
+                "name": "default-token-095sw",
+                "readOnly": true,
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount"
+              }
+            ],
+            "terminationMessagePath": "/dev/termination-log",
+            "imagePullPolicy": "IfNotPresent"
+          }
+        ],
+        "restartPolicy": "Always",
+        "dnsPolicy": "ClusterFirst",
+        "serviceAccountName": "default",
+        "serviceAccount": "default",
+        "nodeName": "gke-webinar-79a3bdb2-node-w05p"
+      },
+      "status": {
+        "phase": "Running",
+        "conditions": [
+          {
+            "type": "Ready",
+            "status": "True"
+          }
+        ],
+        "hostIP": "10.240.33.206",
+        "podIP": "10.0.2.3",
+        "startTime": "2015-07-28T22:27:22Z",
+        "containerStatuses": [
+          {
+            "name": "kube-ui",
+            "state": {
+              "running": {
+                "startedAt": "2015-07-28T22:27:24Z"
+              }
+            },
+            "lastState": {},
+            "ready": true,
+            "restartCount": 0,
+            "image": "gcr.io/google_containers/kube-ui:v1.1",
+            "imageID": "docker://c144d89158dc68fe09f4fb2e2dc66c4d8a6b67fd70e4570ffa0ef0df905c4f29",
+            "containerID": "docker://e723470b2918753060a89b77aae6ca6b808fb2bd193de1b625d8bfbc1efc42a4"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "name": "monitoring-heapster-v5-op0ln",
+        "generateName": "monitoring-heapster-v5-",
+        "namespace": "kube-system",
+        "selfLink": "/api/v1/namespaces/kube-system/pods/monitoring-heapster-v5-op0ln",
+        "uid": "be745f83-3577-11e5-9d90-42010af0c943",
+        "resourceVersion": "45593",
+        "creationTimestamp": "2015-07-28T22:26:51Z",
+        "labels": {
+          "k8s-app": "heapster",
+          "kubernetes.io/cluster-service": "true",
+          "version": "v5"
+        },
+        "annotations": {
+          "kubernetes.io/created-by": "{\"kind\":\"SerializedReference\",\"apiVersion\":\"v1\",\"reference\":{\"kind\":\"ReplicationController\",\"namespace\":\"kube-system\",\"name\":\"monitoring-heapster-v5\",\"uid\":\"be70a3d1-3577-11e5-9d90-42010af0c943\",\"apiVersion\":\"v1\",\"resourceVersion\":\"51\"}}"
+        }
+      },
+      "spec": {
+        "volumes": [
+          {
+            "name": "default-token-095sw",
+            "secret": {
+              "secretName": "default-token-095sw"
+            }
+          }
+        ],
+        "containers": [
+          {
+            "name": "heapster",
+            "image": "gcr.io/google_containers/heapster:v0.16.0",
+            "command": [
+              "/heapster",
+              "--source=kubernetes:''"
+            ],
+            "resources": {
+              "limits": {
+                "cpu": "100m",
+                "memory": "200Mi"
+              }
+            },
+            "volumeMounts": [
+              {
+                "name": "default-token-095sw",
+                "readOnly": true,
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount"
+              }
+            ],
+            "terminationMessagePath": "/dev/termination-log",
+            "imagePullPolicy": "IfNotPresent"
+          }
+        ],
+        "restartPolicy": "Always",
+        "dnsPolicy": "ClusterFirst",
+        "serviceAccountName": "default",
+        "serviceAccount": "default",
+        "nodeName": "gke-webinar-79a3bdb2-node-3ger"
+      },
+      "status": {
+        "phase": "Running",
+        "conditions": [
+          {
+            "type": "Ready",
+            "status": "True"
+          }
+        ],
+        "hostIP": "10.240.89.175",
+        "podIP": "10.0.0.3",
+        "startTime": "2015-07-28T22:27:23Z",
+        "containerStatuses": [
+          {
+            "name": "heapster",
+            "state": {
+              "running": {
+                "startedAt": "2015-07-30T11:37:33Z"
+              }
+            },
+            "lastState": {
+              "terminated": {
+                "exitCode": 137,
+                "reason": "OOM Killed",
+                "startedAt": "2015-07-30T11:28:53Z",
+                "finishedAt": "2015-07-30T11:37:30Z",
+                "containerID": "docker://0fd520f85f2d43025988f41591c320c92e3a6e94631648386d59df9e8f4c9d92"
+              }
+            },
+            "ready": true,
+            "restartCount": 2,
+            "image": "gcr.io/google_containers/heapster:v0.16.0",
+            "imageID": "docker://f79cf2701046bea8d5f1384f7efe79dd4d20620b3594fff5be39142fa862259d",
+            "containerID": "docker://64e75caf18839ce1f9cd90baabb13620e22b90ab748e1a8643c5bea858a0c14c"
+          }
+        ]
+      }
+    }
+  ]
+}

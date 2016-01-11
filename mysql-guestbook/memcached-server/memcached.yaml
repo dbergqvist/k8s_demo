@@ -1,9 +1,11 @@
-apiVersion: v1beta3
+apiVersion: v1
 kind: Pod 
 metadata:
   name: memcached
   labels: 
     name: memcached
+    visualize: "true"
+    app: nextdemo
 spec:
   containers:
     - image: memcached:1.4

@@ -1,0 +1,4 @@
+
+{{printf "%-25s" "SERVICE NAME"}} {{printf "%-18s" "PORTAL IP"}} {{printf "%-18s" "EXTERNAL IP"}}
+{{range .items}}{{printf "%-25s" .metadata.name}} {{printf "%-18s" .spec.portalIP}} {{range .status.loadBalancer.ingress}}{{printf "%-18s" .ip}}{{end}} 
+{{end}}

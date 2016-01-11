@@ -35,7 +35,7 @@ $migrations = array(
 
 // Connect to MySQL
 // Host/user/password must be the same as in the kubernetes pod definition
-$conn = new PDO("mysql:host=mysql", 'root', 'yourpassword');
+$conn = new PDO("mysql:host=mysql", 'root', 'superSecreTPw');
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 # Create the database if it doesn't exist.
